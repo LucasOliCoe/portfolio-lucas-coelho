@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!--
+  Portfólio Pessoal - Lucas de Oliveira Coelho
+  Atividade Prática - Fundamentos da Programação Web - UNINTER
+  Estrutura: Single Page Application com navegação por âncoras
+  Tecnologias: HTML5, CSS3 puro (sem frameworks) e JavaScript puro (sem bibliotecas)
+-->
+<html lang="pt-BR">
+<head>
+  <!-- Configurações básicas do documento -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Viewport para responsividade em dispositivos móveis -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio pessoal de Lucas de Oliveira Coelho - Engenheiro de Dados e estudante de Ciência da Computação." />
+  <meta name="author" content="Lucas de Oliveira Coelho" />
+  <title>Lucas de Oliveira Coelho | Portfólio</title>
+
+  <!-- Folha de estilo principal -->
+  <link rel="stylesheet" href="estilo.css" />
+  <!-- Favicon em SVG inline para evitar requisição extra -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9A%80%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- ===== CABEÇALHO COM MENU FIXO ===== -->
+  <!-- O menu permanece fixo no topo em todas as seções (atende ao requisito da atividade) -->
+  <header class="cabecalho" id="topo">
+    <div class="container cabecalho-conteudo">
+      <a href="#topo" class="logotipo" aria-label="Voltar para o início">
+        <span class="logotipo-icone">LC</span>
+        <span class="logotipo-texto">Lucas Coelho</span>
+      </a>
+
+      <!-- Botão de menu para dispositivos móveis (toggle controlado por JS) -->
+      <button id="botao-menu" class="botao-menu" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Menu de navegação por âncoras (seções da mesma página) -->
+      <nav id="menu" class="menu" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#sobre">Sobre mim</a></li>
+          <li><a href="#formacao">Formação</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+        <!-- Botão para alternar entre tema claro e escuro -->
+        <button id="botao-tema" class="botao-tema" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+          <span class="icone-tema">🌙</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== SEÇÃO 1: SOBRE MIM ===== -->
+    <!-- Apresentação pessoal, hobbies e introdução -->
+    <section id="sobre" class="secao secao-hero">
+      <div class="container">
+        <div class="hero-conteudo">
+          <p class="saudacao">👋 Olá, prazer!</p>
+          <h1>Sou <span class="destaque">Lucas de Oliveira Coelho</span></h1>
+          <p class="subtitulo">Engenheiro de Dados em formação · Apaixonado por dados e por resolver problemas de forma simples e eficiente.</p>
+
+          <!-- Texto de apresentação -->
+          <div class="sobre-texto">
+            <p>
+              Venho de uma formação criativa em <strong>Publicidade e Propaganda</strong> e estou cursando
+              <strong>Ciência da Computação</strong> — combinação que me ajuda a traduzir necessidades de
+              negócio em soluções técnicas claras e mensuráveis.
+            </p>
+            <p>
+              Hoje atuo com <strong>engenharia de dados</strong>, construindo pipelines para coleta, transformação
+              e armazenamento, com foco em qualidade, rastreabilidade e performance. Trabalho com Python
+              (pandas, NumPy, Requests), SQL e Git, aplicando boas práticas de versionamento e modelagem
+              (DW/ETL) para organizar dados e habilitar análises confiáveis.
+            </p>
+            <p>
+              Me destacam a <strong>atenção aos detalhes</strong>, a <strong>capacidade analítica</strong> e a
+              <strong>comunicação clara</strong> — qualidades que uso para alinhar stakeholders, reduzir retrabalho
+              e acelerar entregas.
+            </p>
+          </div>
+
+          <!-- Cartões de hobbies/interesses -->
+          <h2 class="titulo-pequeno">Hobbies &amp; interesses</h2>
+          <div class="hobbies">
+            <div class="hobby">📊 <span>Análise de dados</span></div>
+            <div class="hobby">🐍 <span>Programação em Python</span></div>
+            <div class="hobby">📚 <span>Leitura técnica</span></div>
+            <div class="hobby">🎬 <span>Cinema e séries</span></div>
+            <div class="hobby">🎮 <span>Games estratégicos</span></div>
+            <div class="hobby">✈️ <span>Viagens</span></div>
+          </div>
+
+          <!-- Botões de ação principais -->
+          <div class="hero-acoes">
+            <a href="#portfolio" class="botao botao-primario">Ver meus projetos</a>
+            <a href="#contato" class="botao botao-secundario">Falar comigo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SEÇÃO 2: FORMAÇÃO ===== -->
+    <!-- Cursos, idiomas e formação educacional -->
+    <section id="formacao" class="secao secao-alternada">
+      <div class="container">
+        <header class="cabecalho-secao">
+          <span class="numero-secao">02</span>
+          <h2>Formação</h2>
+          <p>Minha trajetória acadêmica e cursos complementares</p>
+        </header>
+
+        <!-- Linha do tempo da formação acadêmica -->
+        <h3 class="subtitulo-secao">🎓 Formação acadêmica</h3>
+        <div class="linha-tempo">
+          <article class="item-tempo">
+            <div class="item-tempo-data">2024 — atual</div>
+            <div class="item-tempo-corpo">
+              <h4>Bacharelado em Ciência da Computação</h4>
+              <p class="instituicao">Centro Universitário Internacional UNINTER</p>
+              <p>Estudo de algoritmos, estruturas de dados, fundamentos de programação web, banco de dados e engenharia de software.</p>
+            </div>
+          </article>
+
+          <article class="item-tempo">
+            <div class="item-tempo-data">Concluído</div>
+            <div class="item-tempo-corpo">
+              <h4>Tecnólogo em Ciência de Dados</h4>
+              <p class="instituicao">Formação em análise e engenharia de dados</p>
+              <p>Estatística, modelagem de dados, ETL, data warehousing, visualização e introdução a machine learning.</p>
+            </div>
+          </article>
+
+          <article class="item-tempo">
+            <div class="item-tempo-data">Concluído</div>
+            <div class="item-tempo-corpo">
+              <h4>Bacharelado em Publicidade e Propaganda</h4>
+              <p class="instituicao">Comunicação Social</p>
+              <p>Base sólida em comunicação, branding, comportamento do consumidor e produção criativa — habilidades que aplico hoje na comunicação técnica com stakeholders.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Cursos complementares (cards) -->
+        <h3 class="subtitulo-secao">📚 Cursos &amp; trilhas complementares</h3>
+        <div class="grade-cursos">
+          <div class="cartao-curso">
+            <h4>Python para Data Science</h4>
+            <p>Pandas, NumPy, manipulação de dataframes e análise exploratória.</p>
+          </div>
+          <div class="cartao-curso">
+            <h4>SQL e Modelagem de Dados</h4>
+            <p>SQL avançado, modelagem dimensional, normalização e otimização de consultas.</p>
+          </div>
+          <div class="cartao-curso">
+            <h4>ETL e Data Warehousing</h4>
+            <p>Construção de pipelines de extração, transformação e carga; modelagem star/snowflake.</p>
+          </div>
+          <div class="cartao-curso">
+            <h4>Versionamento com Git/GitHub</h4>
+            <p>Workflow profissional, branches, pull requests e colaboração em equipe.</p>
+          </div>
+        </div>
+
+        <!-- Tabela de idiomas -->
+        <h3 class="subtitulo-secao">🌎 Idiomas</h3>
+        <div class="grade-idiomas">
+          <div class="idioma">
+            <h4>Português</h4>
+            <p>Nativo</p>
+            <div class="barra"><div class="barra-preenchida" style="width:100%"></div></div>
+          </div>
+          <div class="idioma">
+            <h4>Inglês</h4>
+            <p>Intermediário · leitura técnica avançada</p>
+            <div class="barra"><div class="barra-preenchida" style="width:70%"></div></div>
+          </div>
+          <div class="idioma">
+            <h4>Espanhol</h4>
+            <p>Básico</p>
+            <div class="barra"><div class="barra-preenchida" style="width:35%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SEÇÃO 3: PORTFÓLIO ===== -->
+    <!-- Projetos e trabalhos realizados, com links externos -->
+    <section id="portfolio" class="secao">
+      <div class="container">
+        <header class="cabecalho-secao">
+          <span class="numero-secao">03</span>
+          <h2>Portfólio</h2>
+          <p>Projetos públicos no GitHub e trabalhos selecionados</p>
+        </header>
+
+        <!-- Filtros (interação JS - mostrar/esconder por categoria) -->
+        <div class="filtros" role="tablist" aria-label="Filtrar projetos">
+          <button class="filtro ativo" data-filtro="todos" role="tab" aria-selected="true">Todos</button>
+          <button class="filtro" data-filtro="dados" role="tab" aria-selected="false">Dados</button>
+          <button class="filtro" data-filtro="web" role="tab" aria-selected="false">Web</button>
+          <button class="filtro" data-filtro="python" role="tab" aria-selected="false">Python</button>
+        </div>
+
+        <!-- Grid de projetos - todos os links apontam para repositórios reais no GitHub -->
+        <div class="grade-projetos">
+
+          <!-- Projeto 1: este próprio portfólio -->
+          <article class="projeto" data-categoria="web">
+            <div class="projeto-imagem">🌐</div>
+            <div class="projeto-corpo">
+              <span class="projeto-tag">Web</span>
+              <h3>Portfólio Pessoal</h3>
+              <p>Single Page Application em HTML5, CSS3 e JavaScript puros, com tema claro/escuro, validação de formulário e navegação por âncoras. Atividade prática da disciplina Fundamentos da Programação Web.</p>
+              <ul class="projeto-tecnologias">
+                <li>HTML5</li><li>CSS3</li><li>JavaScript</li>
+              </ul>
+              <div class="projeto-links">
+                <a href="https://github.com/LucasOliCoe/portfolio-lucas-coelho" target="_blank" rel="noopener">Repositório</a>
+                <a href="https://lucasolicoe.github.io/portfolio-lucas-coelho/" target="_blank" rel="noopener">Site publicado</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 2: desafio_pokemon -->
+          <article class="projeto" data-categoria="dados python">
+            <div class="projeto-imagem">⚡</div>
+            <div class="projeto-corpo">
+              <span class="projeto-tag">Engenharia de Dados</span>
+              <h3>Desafio Pokémon (ETL + Dashboard)</h3>
+              <p>Projeto ETL completo com extração de dados via PokeAPI, transformação com pandas e visualização em dashboard Streamlit interativo.</p>
+              <ul class="projeto-tecnologias">
+                <li>Python</li><li>pandas</li><li>Streamlit</li><li>ETL</li>
+              </ul>
+              <div class="projeto-links">
+                <a href="https://github.com/LucasOliCoe/desafio_pokemon" target="_blank" rel="noopener">Ver no GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 3: Pipeline orientado a objeto -->
+          <article class="projeto" data-categoria="dados python">
+            <div class="projeto-imagem">🔄</div>
+            <div class="projeto-corpo">
+              <span class="projeto-tag">Engenharia de Dados</span>
+              <h3>Pipeline de Dados Orientado a Objeto</h3>
+              <p>Pipeline de dados estruturado com programação orientada a objeto, demonstrando boas práticas de modularização, classes e responsabilidades em ETL.</p>
+              <ul class="projeto-tecnologias">
+                <li>Python</li><li>POO</li><li>Jupyter</li>
+              </ul>
+              <div class="projeto-links">
+                <a href="https://github.com/LucasOliCoe/Pipeline_dados_orientado_objeto" target="_blank" rel="noopener">Ver no GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 4: Clube do livro SQL -->
+          <article class="projeto" data-categoria="dados">
+            <div class="projeto-imagem">🗄️</div>
+            <div class="projeto-corpo">
+              <span class="projeto-tag">Modelagem de Dados</span>
+              <h3>Clube do Livro — Modelagem SQL</h3>
+              <p>Estudo prático de modelagem de dados relacionais aplicado a um sistema de clube do livro, com tabelas, relacionamentos e queries analíticas.</p>
+              <ul class="projeto-tecnologias">
+                <li>SQL</li><li>Modelagem</li><li>Banco Relacional</li>
+              </ul>
+              <div class="projeto-links">
+                <a href="https://github.com/LucasOliCoe/Projeto-clube-do-livro-SQL" target="_blank" rel="noopener">Ver no GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 5: Calculando faturamento -->
+          <article class="projeto" data-categoria="python dados">
+            <div class="projeto-imagem">📈</div>
+            <div class="projeto-corpo">
+              <span class="projeto-tag">Análise de Dados</span>
+              <h3>Cálculo de Faturamento e Ticket Médio</h3>
+              <p>Notebook que processa CSV de vendas e calcula automaticamente o faturamento e o ticket médio por produto, com pandas e visualizações.</p>
+              <ul class="projeto-tecnologias">
+                <li>Python</li><li>pandas</li><li>Jupyter</li>
+              </ul>
+              <div class="projeto-links">
+                <a href="https://github.com/LucasOliCoe/Calculando_faturamento" target="_blank" rel="noopener">Ver no GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 6: Linguagens repositórios empresas -->
+          <article class="projeto" data-categoria="dados python">
+            <div class="projeto-imagem">🏢</div>
+            <div class="projeto-corpo">
+              <span class="projeto-tag">Análise de Dados</span>
+              <h3>Linguagens em Repositórios de Empresas</h3>
+              <p>Análise comparativa das linguagens de programação mais usadas em repositórios públicos de grandes empresas, via API do GitHub.</p>
+              <ul class="projeto-tecnologias">
+                <li>Python</li><li>API</li><li>pandas</li><li>Jupyter</li>
+              </ul>
+              <div class="projeto-links">
+                <a href="https://github.com/LucasOliCoe/linguagens-repositorios-empresas" target="_blank" rel="noopener">Ver no GitHub</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="aviso-projetos">
+          🔗 Todos os projetos públicos estão disponíveis no meu GitHub:
+          <a href="https://github.com/LucasOliCoe" target="_blank" rel="noopener">github.com/LucasOliCoe</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== SEÇÃO 4: CONTATO ===== -->
+    <!-- Formulário com validação obrigatória em JavaScript -->
+    <section id="contato" class="secao secao-alternada">
+      <div class="container">
+        <header class="cabecalho-secao">
+          <span class="numero-secao">04</span>
+          <h2>Contato</h2>
+          <p>Vamos conversar? Envie uma mensagem ou use os canais abaixo.</p>
+        </header>
+
+        <div class="contato-conteudo">
+
+          <!-- Coluna esquerda: informações de contato -->
+          <aside class="contato-info">
+            <h3>Informações</h3>
+            <ul class="lista-contato">
+              <li>
+                <span class="icone">✉️</span>
+                <div>
+                  <strong>E-mail</strong>
+                  <a href="mailto:lucasolicontato@gmail.com">lucasolicontato@gmail.com</a>
+                </div>
+              </li>
+              <li>
+                <span class="icone">💼</span>
+                <div>
+                  <strong>GitHub</strong>
+                  <a href="https://github.com/LucasOliCoe" target="_blank" rel="noopener">github.com/LucasOliCoe</a>
+                </div>
+              </li>
+              <li>
+                <span class="icone">📍</span>
+                <div>
+                  <strong>Localização</strong>
+                  <span>Brasília - DF, Brasil</span>
+                </div>
+              </li>
+            </ul>
+          </aside>
+
+          <!-- Coluna direita: formulário de contato -->
+          <form id="formulario-contato" class="formulario" novalidate aria-label="Formulário de contato">
+            <h3>Envie uma mensagem</h3>
+
+            <!-- Campo Nome -->
+            <div class="campo">
+              <label for="nome">Nome <span aria-hidden="true">*</span></label>
+              <input type="text" id="nome" name="nome" autocomplete="name" required />
+              <small class="erro" id="erro-nome" role="alert"></small>
+            </div>
+
+            <!-- Campo E-mail -->
+            <div class="campo">
+              <label for="email">E-mail <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required />
+              <small class="erro" id="erro-email" role="alert"></small>
+            </div>
+
+            <!-- Campo Mensagem -->
+            <div class="campo">
+              <label for="mensagem">Mensagem <span aria-hidden="true">*</span></label>
+              <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+              <small class="erro" id="erro-mensagem" role="alert"></small>
+            </div>
+
+            <button type="submit" class="botao botao-primario">Enviar mensagem</button>
+
+            <!-- Mensagem de status (sucesso) - controlada via JS -->
+            <p id="status-formulario" class="status-formulario" role="status" aria-live="polite"></p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer class="rodape">
+    <div class="container rodape-conteudo">
+      <p>© <span id="ano-atual"></span> Lucas de Oliveira Coelho — Feito com 💙 em HTML, CSS e JavaScript puros.</p>
+      <p class="rodape-uninter">Atividade Prática · Fundamentos da Programação Web · UNINTER</p>
+    </div>
+  </footer>
+
+  <!-- ===== MODAL DE CONFIRMAÇÃO ===== -->
+  <!-- Exibido após envio bem-sucedido do formulário (controlado por JS) -->
+  <div id="modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+    <div class="modal-conteudo">
+      <button class="modal-fechar" id="fechar-modal" aria-label="Fechar">&times;</button>
+      <div class="modal-icone">✅</div>
+      <h3 id="modal-titulo">Mensagem enviada com sucesso!</h3>
+      <p>Obrigado pelo contato! Retornarei em breve no e-mail informado.</p>
+      <button class="botao botao-primario" id="ok-modal">OK</button>
+    </div>
+  </div>
+
+  <!-- Script principal -->
+  <script src="script.js"></script>
+</body>
+</html>
